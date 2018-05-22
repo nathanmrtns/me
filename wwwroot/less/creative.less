@@ -62,12 +62,20 @@ p {
     color: fade(white, 70%);
 }
 
+.mail {
+    color: white;
+}
+
 section {
     padding: 100px 0;
 }
 
 aside {
     padding: 50px 0;
+}
+
+footer {
+    background-color: @theme-primary;
 }
 
 .no-padding {
@@ -79,11 +87,11 @@ aside {
 .navbar-default {
     background-color: white;
     border-color: fade(@theme-dark, 5%);
-    .sans-serif-font;
+    .serif-font;
     .transition-all;
     .navbar-header .navbar-brand {
         color: @theme-primary;
-        .sans-serif-font;
+        .serif-font;
         font-weight: 700;
         text-transform: uppercase;
         &:hover,
@@ -162,7 +170,7 @@ header {
     min-height: auto;
     .background-cover;
     background-position: center;
-    background-color: @theme-dark;
+    background-color: white;
     /*background-image: url('../img/background.jpg');*/
     text-align: center;
     color: white;
@@ -223,6 +231,11 @@ header {
 
 .section-heading {
     margin-top: 0;
+}
+
+.section-heading-primary {
+    margin-top: 0;
+    color: @theme-primary;
 }
 
 .service-box {

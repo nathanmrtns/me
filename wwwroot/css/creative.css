@@ -4,7 +4,7 @@ body {
   width: 100%;
 }
 body {
-  font-family: 'Montserrat' /*'Merriweather', 'Helvetica Neue', Arial,*/, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 hr {
   border-color: #086788;
@@ -33,7 +33,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Montserrat' /*'Open Sans', 'Helvetica Neue', Arial,*/, sans-serif;
+  font-family: 'Anton', sans-serif;
 }
 p {
   font-size: 16px;
@@ -49,11 +49,17 @@ p {
 .text-faded {
   color: rgba(255, 255, 255, 0.7);
 }
+.mail {
+  color: white;
+}
 section {
   padding: 100px 0;
 }
 aside {
   padding: 50px 0;
+}
+footer {
+  background-color: #086788;
 }
 .no-padding {
   padding: 0;
@@ -61,14 +67,14 @@ aside {
 .navbar-default {
   background-color: white;
   border-color: rgba(120, 120, 120, 0.05);
-  font-family: 'Montserrat' /*'Open Sans', 'Helvetica Neue', Arial,*/, sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
 }
 .navbar-default .navbar-header .navbar-brand {
   color: #086788;
-  font-family: 'Montserrat' /*'Open Sans', 'Helvetica Neue', Arial,*/, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -146,7 +152,7 @@ header {
   background-size: cover;
   -o-background-size: cover;
   background-position: center;
-  background-color: #787878;
+  background-color: white;
   /*background-image: url('../img/background.jpg');*/
   text-align: center;
   color: white;
@@ -204,6 +210,10 @@ header .header-content .header-content-inner img {
 .section-heading {
   margin-top: 0;
 }
+.section-heading-primary {
+  margin-top: 0;
+  color: #086788;
+}
 .service-box {
   max-width: 400px;
   margin: 50px auto 0;
@@ -245,7 +255,7 @@ header .header-content .header-content-inner img {
 }
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
-  font-family: 'Montserrat' /*'Open Sans', 'Helvetica Neue', Arial,*/, sans-serif;
+  font-family: 'Anton', sans-serif;
   padding: 0 15px;
 }
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
@@ -374,7 +384,7 @@ fieldset[disabled] .btn-primary.active {
   background-color: white;
 }
 .btn {
-  font-family: 'Montserrat' /*'Open Sans', 'Helvetica Neue', Arial,*/, sans-serif;
+  font-family: 'Anton', sans-serif;
   border: none;
   border-radius: 300px;
   font-weight: 700;
