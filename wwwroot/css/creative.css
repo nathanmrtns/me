@@ -7,7 +7,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 hr {
-  border-color: #086788;
+  border-color: #0C356A;
   border-width: 3px;
   max-width: 50px;
 }
@@ -21,11 +21,21 @@ a {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
-  color: #787878;
+  color: white;
 }
 a:hover,
 a:focus {
-  color: #054358;
+  color: #767676;
+}
+#contact a {
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+  color: #787878;
+}
+#contact a:hover,
+#contact a:focus {
+  color: #767676;
 }
 h1,
 h2,
@@ -41,7 +51,7 @@ p {
   margin-bottom: 20px;
 }
 .bg-primary {
-  background-color: #086788;
+  background-color: #0C356A;
 }
 .bg-dark {
   background-color: #787878;
@@ -59,13 +69,13 @@ aside {
   padding: 50px 0;
 }
 footer {
-  background-color: #086788;
+  background-color: #0C356A;
 }
 .no-padding {
   padding: 0;
 }
 .navbar-default {
-  background-color: white;
+  background-color: #0C356A;
   border-color: rgba(120, 120, 120, 0.05);
   font-family: 'Roboto', sans-serif;
   -webkit-transition: all 0.35s;
@@ -73,29 +83,29 @@ footer {
   transition: all 0.35s;
 }
 .navbar-default .navbar-header .navbar-brand {
-  color: #086788;
+  color: white;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
 }
 .navbar-default .navbar-header .navbar-brand:hover,
 .navbar-default .navbar-header .navbar-brand:focus {
-  color: #054358;
+  color: #071e3c;
 }
 .navbar-default .nav > li > a,
 .navbar-default .nav > li > a:focus {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 13px;
-  color: #787878;
+  color: white;
 }
 .navbar-default .nav > li > a:hover,
 .navbar-default .nav > li > a:focus:hover {
-  color: #086788;
+  color: #8f8f8f;
 }
 .navbar-default .nav > li.active > a,
 .navbar-default .nav > li.active > a:focus {
-  color: #086788 !important;
+  color: #0C356A !important;
   background-color: transparent;
 }
 .navbar-default .nav > li.active > a:hover,
@@ -123,24 +133,24 @@ footer {
     color: white;
   }
   .navbar-default.affix {
-    background-color: white;
+    background-color: #0C356A;
     border-color: rgba(120, 120, 120, 0.05);
   }
   .navbar-default.affix .navbar-header .navbar-brand {
-    color: #086788;
+    color: white;
     font-size: 14px;
   }
   .navbar-default.affix .navbar-header .navbar-brand:hover,
   .navbar-default.affix .navbar-header .navbar-brand:focus {
-    color: #054358;
+    color: #767676;
   }
   .navbar-default.affix .nav > li > a,
   .navbar-default.affix .nav > li > a:focus {
-    color: #787878;
+    color: white;
   }
   .navbar-default.affix .nav > li > a:hover,
   .navbar-default.affix .nav > li > a:focus:hover {
-    color: #086788;
+    color: #8f8f8f;
   }
 }
 header {
@@ -212,7 +222,7 @@ header .header-content .header-content-inner img {
 }
 .section-heading-primary {
   margin-top: 0;
-  color: #086788;
+  color: white;
 }
 .service-box {
   max-width: 400px;
@@ -236,7 +246,7 @@ header .header-content .header-content-inner img {
   color: white;
   opacity: 0;
   display: block;
-  background: rgba(8, 103, 136, 0.9);
+  background: rgba(12, 53, 106, 0.9);
   position: absolute;
   bottom: 0;
   text-align: center;
@@ -281,7 +291,7 @@ header .header-content .header-content-inner img {
   margin: 0 auto 20px;
 }
 .text-primary {
-  color: #086788;
+  color: #0C356A;
 }
 .no-gutter > [class*='col-'] {
   padding-right: 0;
@@ -337,8 +347,8 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: white;
-  background-color: #086788;
-  border-color: #086788;
+  background-color: #0C356A;
+  border-color: #0C356A;
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
@@ -350,8 +360,8 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   color: white;
-  background-color: #075570;
-  border-color: #064d66;
+  background-color: #092a53;
+  border-color: #08254a;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -376,11 +386,11 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #086788;
-  border-color: #086788;
+  background-color: #0C356A;
+  border-color: #0C356A;
 }
 .btn-primary .badge {
-  color: #086788;
+  color: #0C356A;
   background-color: white;
 }
 .btn {

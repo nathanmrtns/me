@@ -28,10 +28,21 @@ hr.dark {
 
 a {
     .transition-all;
-    color: @theme-dark;
+    color: white;
     &:hover,
     &:focus {
-        color: darken(@theme-primary, 10%);
+        color: darken(@theme-dark-light, 10%);
+    }
+}
+
+#contact {
+    a {
+        .transition-all;
+        color: @theme-dark;
+        &:hover,
+        &:focus {
+            color: darken(@theme-dark-light, 10%);
+        }
     }
 }
 
@@ -85,12 +96,12 @@ footer {
 // Navigation
 
 .navbar-default {
-    background-color: white;
+    background-color: @theme-primary;
     border-color: fade(@theme-dark, 5%);
     .serif-font;
     .transition-all;
     .navbar-header .navbar-brand {
-        color: @theme-primary;
+        color: white;
         .serif-font;
         font-weight: 700;
         text-transform: uppercase;
@@ -106,9 +117,9 @@ footer {
                 text-transform: uppercase;
                 font-weight: 700;
                 font-size: 13px;
-                color: @theme-dark;
+                color: white;
                 &:hover {
-                    color: @theme-primary;
+                    color: @theme-dark-light;
                 }
             }
             &.active {
@@ -141,21 +152,21 @@ footer {
             }
         }
         &.affix {
-            background-color: white;
+            background-color: @theme-primary;
             border-color: fade(@theme-dark, 5%);
             .navbar-header .navbar-brand {
-                color: @theme-primary;
+                color: white;
                 font-size: 14px;
                 &:hover,
                 &:focus {
-                    color: darken(@theme-primary, 10%);
+                    color: darken(@theme-dark-light, 10%);
                 }
             }
             .nav > li > a,
             .nav > li > a:focus {
-                color: @theme-dark;
+                color: white;
                 &:hover {
-                    color: @theme-primary;
+                    color: @theme-dark-light;
                 }
             }
         }
@@ -235,7 +246,7 @@ header {
 
 .section-heading-primary {
     margin-top: 0;
-    color: @theme-primary;
+    color: white;
 }
 
 .service-box {
