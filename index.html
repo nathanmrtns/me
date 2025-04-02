@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,923 +8,395 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
-        @font-face {
-            font-family: 'LucideIcons';
-            src: url(https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.ttf) format('truetype');
-        }
-
-        .lucide {
-            font-family: 'LucideIcons';
-            font-style: normal;
-            font-weight: normal;
-            font-variant: normal;
-            text-rendering: auto;
-            line-height: 1;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            display: inline-block;
-        }
-
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 48;
-            line-height: 1;
-            /* Ensure icon aligns well */
-        }
-
-        /* --- Color Palettes --- */
-        :root {
-            /* Light Theme (Default - Purple Inspired) */
-            --bg-main: #F4F0FF;
-            --bg-card: #ffffff;
-            --bg-panel: #ffffff;
-            --bg-hover: #f8fafc;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --accent-color: #7402FF;
-            --accent-text-color: #ffffff;
-            --border-color: #e2e8f0;
-            --shadow-color: rgba(97, 1, 214, 0.07);
-            --overlay-bg: rgba(0, 0, 0, 0.1);
-            --panel-bg: var(--bg-panel);
-            --panel-text-primary: var(--text-primary);
-            --panel-text-secondary: var(--text-secondary);
-            --exp-item-strong-color: var(--accent-color);
-            --close-button-bg: rgba(0, 0, 0, 0.05);
-            --close-button-hover-bg: rgba(0, 0, 0, 0.1);
-            --brightness-filter: brightness(0.98);
-            --wave-color-1: #DACDFF;
-            --wave-color-2: #C0A6FF;
-            --wave-color-3: #A373FF;
-            --wave-color-4: #8A3BFF;
-            --wave-color-5: #7402FF;
-            --wave-opacity: 0.4;
-        }
-
-        .dark-mode {
-            /* Dark Theme (Electric Violet) */
-            --bg-main: #1a1a1a;
-            --bg-card: #460076;
-            --bg-panel: #2c2c2c;
-            --bg-hover: #71079C;
-            --text-primary: #f0f0f0;
-            --text-secondary: #a0a0a0;
-            --accent-color: #B80FFF;
-            --accent-text-color: #ffffff;
-            --border-color: #555555;
-            --shadow-color: rgba(0, 0, 0, 0.3);
-            --overlay-bg: rgba(26, 26, 26, 0.7);
-            --panel-bg: var(--bg-panel);
-            --panel-text-primary: #ffffff;
-            --panel-text-secondary: #cccccc;
-            --exp-item-strong-color: var(--accent-color);
-            --close-button-bg: rgba(255, 255, 255, 0.08);
-            --close-button-hover-bg: rgba(255, 255, 255, 0.15);
-            --brightness-filter: brightness(1);
-            /* Dark theme wave colors (Violet to Fuchsia) */
-            --wave-color-1: #fc00fc;
-            --wave-color-2: #CE00DA;
-            --wave-color-3: #A100B9;
-            --wave-color-4: #730097;
-            --wave-color-5: #460076;
-            --wave-opacity: 0.5;
-        }
-
-        html,
-        body {
-            height: 100%;
-            overflow: hidden;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-main);
-            color: var(--text-primary);
-            position: relative;
-            z-index: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            background-image: none;
-            background-size: auto;
-            background-position: default;
-            background-repeat: default;
-            background-attachment: default;
-        }
-
-        body::before {
-            content: none;
-        }
-
-        /* Centering Wrapper */
-        .portfolio-wrapper {
-            max-width: 1024px;
-            width: 100%;
-            height: 80%;
-            max-height: 80vh;
-            margin: 0 auto;
-            border: 1px solid var(--border-color);
-            border-radius: 1rem;
-            overflow: hidden;
-            position: relative;
-            background-color: var(--bg-main);
-            box-shadow: 0 8px 25px var(--shadow-color);
-            transition: background-color 0.3s ease, border-color 0.3s ease;
-        }
-
-        .secondary-text {
-            color: var(--text-secondary);
-        }
-
-        .accent-bg {
-            background-color: var(--accent-color);
-        }
-
-        .accent-text {
-            color: var(--accent-text-color);
-        }
-
-        /* Utility class for accent underline */
-        .underline-accent {
-            text-decoration: underline;
-            text-decoration-color: var(--accent-color);
-            text-decoration-thickness: 2px;
-            /* Adjust thickness */
-            text-underline-offset: 4px;
-            /* Adjust offset */
-            transition: text-decoration-color 0.3s ease;
-        }
-
-
-        /* Main Layout Container */
-        .portfolio-container {
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* Wrapper for Bento Grid */
-        #bento-grid-wrapper {
-            height: 100%;
-            display: flex;
-            align-items: stretch;
-            justify-content: center;
-            padding: 1rem;
-            box-sizing: border-box;
-            position: relative;
-            z-index: 1;
-            overflow-y: auto;
-            overflow-x: hidden;
-        }
-
-        /* Bento Grid Styling */
-        #bento-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 1rem;
-            align-content: stretch;
-            height: 100%;
-            width: 100%;
-            overflow: visible;
-            background-color: transparent;
-            transition: filter 0.3s ease-in-out;
-        }
-
-        body.panel-visible #bento-grid {
-            filter: var(--brightness-filter);
-        }
-
-        /* Side Panel Dialog Styling */
-        #content-display {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 45%;
-            max-width: 550px;
-            height: 100vh;
-            background-color: var(--panel-bg);
-            box-shadow: -3px 0 15px var(--shadow-color);
-            padding: 1.5rem 2rem;
-            overflow-y: auto;
-            z-index: 100;
-            transform: translateX(100%);
-            transition: transform 0.4s ease-in-out, background-image 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
-            visibility: hidden;
-            border-left: 1px solid var(--border-color);
-            color: var(--panel-text-primary);
-            background-image: none;
-        }
-
-        /* Dark Mode Side Panel */
-        .dark-mode #content-display {
-            background-image: none;
-            background-color: var(--panel-bg);
-            color: var(--panel-text-primary);
-        }
-
-        .dark-mode #content-display .secondary-text,
-        .dark-mode #content-display p,
-        .dark-mode #content-display li,
-        .dark-mode #content-display span:not(.material-symbols-outlined):not(.lucide):not(.position):not(.company):not(.job-dates) {
-            color: var(--panel-text-secondary);
-        }
-
-        .dark-mode #content-display a span {
-            color: var(--panel-text-primary);
-        }
-
-        .dark-mode #content-display a.contact-link {
-            border-color: transparent;
-            background-color: transparent;
-        }
-
-        .dark-mode #content-display a.contact-link:hover {
-            background-color: var(--bg-hover);
-        }
-
-        .dark-mode #content-display a .lucide {
-            color: var(--panel-text-secondary);
-        }
-
-        body.panel-visible #content-display {
-            transform: translateX(0%);
-            visibility: visible;
-        }
-
-        /* Panel Overlay */
-        #panel-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--overlay-bg);
-            z-index: 50;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.4s ease-in-out, visibility 0s linear 0.4s, background-color 0.3s ease;
-        }
-
-        body.panel-visible #panel-overlay {
-            opacity: 1;
-            visibility: visible;
-            transition: opacity 0.4s ease-in-out, visibility 0s linear 0s, background-color 0.3s ease;
-        }
-
-        /* Bento Box Styling */
-        .bento-box {
-            background-color: var(--bg-card);
-            border-radius: 0.75rem;
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border 0.3s ease;
-            box-shadow: 0 2px 4px var(--shadow-color);
-            overflow: hidden;
-            border: 2px solid transparent;
-            box-sizing: border-box;
-            color: var(--text-primary);
-        }
-
-        /* Explicit Grid Placement Styles */
-        .bento-about {
-            grid-column: 1 / 5;
-            grid-row: 1;
-        }
-
-        .bento-skills {
-            grid-column: 1 / 2;
-            grid-row: 2;
-        }
-
-        .bento-image {
-            grid-column: 2 / 3;
-            grid-row: 2;
-        }
-
-        .bento-experience {
-            grid-column: 3 / 5;
-            grid-row: 2 / 3;
-        }
-
-        .bento-linkedin {
-            grid-column: 1 / 2;
-            grid-row: 3;
-        }
-
-        .bento-contact {
-            grid-column: 2 / 3;
-            grid-row: 3;
-        }
-
-        .bento-github {
-            grid-column: 3 / 4;
-            grid-row: 3;
-        }
-
-        .bento-theme-toggle {
-            grid-column: 4 / 5;
-            grid-row: 3;
-        }
-
-        .bento-box[data-content-id],
-        .bento-box.link-box a,
-        .bento-box.theme-toggle-box {
-            cursor: pointer;
-        }
-
-        .bento-box:not(.link-box):not(.image-box):hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px var(--shadow-color);
-        }
-
-        .bento-box[data-content-id]:not(.image-cover-box):hover,
-        .bento-box.theme-toggle-box:hover,
-        .bento-box.link-box a:hover {
-            background-color: var(--bg-hover);
-        }
-
-        .bento-box.link-box {
-            cursor: default;
-            padding: 0;
-            background-color: transparent;
-            border: none;
-            box-shadow: none;
-        }
-
-        .bento-box.link-box a {
-            display: block;
-            height: 100%;
-            width: 100%;
-            text-decoration: none;
-            color: inherit;
-            border-radius: 0.75rem;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-            background-color: var(--bg-card);
-            box-shadow: 0 2px 4px var(--shadow-color);
-        }
-
-        .bento-box.link-box a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px var(--shadow-color);
-        }
-
-        .bento-box.link-box a:hover img {
-            transform: scale(1.05);
-        }
-
-        .bento-box.active-box {
-            border: 2px solid var(--accent-color);
-            transform: translateY(0);
-        }
-
-        /* Box Header */
-        .bento-box .box-header {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            margin-bottom: 0.6rem;
-        }
-
-        .bento-box .icon {
-            font-size: 1.3rem;
-            line-height: 1;
-            flex-shrink: 0;
-            color: var(--text-secondary);
-        }
-
-        .bento-box h3 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-align: left;
-            flex-grow: 1;
-            margin-left: 0.5rem;
-        }
-
-        /* Header Only Boxes */
-        .bento-box.header-only {
-            justify-content: center;
-            align-items: center;
-            padding: 1rem;
-        }
-
-        .bento-box.header-only .box-header {
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            margin-bottom: 0;
-        }
-
-        .bento-box.header-only .icon {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .bento-box.header-only h3 {
-            font-size: 1rem;
-            margin-left: 0;
-            color: var(--text-secondary);
-        }
-
-        /* About Box */
-        .bento-box.about-intro-box {
-            padding: 1.25rem 1.5rem;
-            align-items: center;
-            text-align: center;
-            justify-content: center;
-        }
-
-        .bento-box.about-intro-box h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 0.75rem;
-        }
-
-        .bento-box.about-intro-box .box-content {
-            margin-top: 0;
-            font-size: 0.9rem;
-            max-width: 80%;
-            color: var(--text-secondary);
-        }
-
-        .bento-box .box-content {
-            text-align: left;
-            font-size: 0.75rem;
-            line-height: 1.4;
-            color: var(--text-secondary);
-            overflow: hidden;
-        }
-
-        /* Image Box */
-        .bento-box.image-box {
-            padding: 0;
-            justify-content: center;
-            align-items: center;
-            cursor: default;
-            background-color: transparent;
-            border: none;
-            box-shadow: none;
-        }
-
-        .bento-box.image-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 0.75rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 2px 4px var(--shadow-color);
-        }
-
-        .bento-box.image-box:hover img {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px var(--shadow-color);
-        }
-
-        /* Experience Box */
-        .bento-box.experience-box {
-            justify-content: flex-start;
-        }
-
-        .bento-box.experience-box .box-header h3 {
-            font-size: 1.1rem;
-        }
-
-        .bento-box.experience-box .box-header .icon {
-            font-size: 1.5rem;
-            color: var(--text-primary);
-        }
-
-        .bento-box.experience-box .box-content {
-            flex-grow: 1;
-            display: block;
-        }
-
-        .experience-preview .job-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.4rem 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .experience-preview .job-item:last-child {
-            border-bottom: none;
-        }
-
-        .experience-preview .job-details .position {
-            font-weight: 600;
-            font-size: 0.8rem;
-            color: var(--text-primary);
-            display: block;
-        }
-
-        .experience-preview .job-details .company {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-        }
-
-        .experience-preview .job-dates {
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-            text-align: right;
-            white-space: nowrap;
-            margin-left: 0.75rem;
-        }
-
-        /* Content Panel */
-        .content-panel {
-            display: none;
-            animation: fadeInContent 0.6s ease forwards;
-        }
-
-        .content-panel.visible-panel {
-            display: block;
-        }
-
-        @keyframes fadeInContent {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        #content-display h2,
-        #content-display h4 {
-            color: var(--panel-text-primary);
-        }
-
-        #content-display p,
-        #content-display li,
-        #content-display span:not(.material-symbols-outlined):not(.lucide) {
-            color: var(--panel-text-secondary);
-        }
-
-        #content-display a span {
-            color: var(--panel-text-primary);
-        }
-
-        #content-display .exp-item strong {
-            color: var(--exp-item-strong-color);
-        }
-
-        /* Contact link hover */
-        #contact-content a.contact-link {
-            transition: color 0.3s ease;
-            display: flex;
-            align-items: center;
-            padding: 0.5rem 0;
-        }
-
-        #contact-content a.contact-link:hover,
-        #contact-content a.contact-link:hover span,
-        #contact-content a.contact-link:hover .lucide {
-            color: var(--accent-color) !important;
-            background-color: transparent !important;
-        }
-
-        #contact-content a.contact-link .lucide {
-            color: var(--panel-text-secondary);
-            margin-right: 0.75rem;
-            font-size: 1.25rem;
-            transition: color 0.3s ease;
-        }
-
-
-        /* Close Button */
-        #close-content {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--close-button-bg);
-            color: var(--text-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 50%;
-            width: 2.25rem;
-            height: 2.25rem;
-            font-size: 1.25rem;
-            line-height: 1;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-            z-index: 110;
-        }
-
-        #close-content:hover {
-            background: var(--close-button-hover-bg);
-            color: var(--text-primary);
-        }
-
-        /* --- Panel Item Styling (No Card) --- */
-        /* Add dividers and padding to panel list items */
-        #experience-content .exp-item-container:not(:last-child),
-        #skills-content .skill-item-container:not(:last-child),
-        #contact-content .space-y-4>a:not(:last-child) {
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1rem;
-            margin-bottom: 1rem;
-        }
-
+      @font-face {
+        font-family: 'LucideIcons';
+        src: url(https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.ttf) format('truetype');
+      }
+      .lucide {
+        font-family: 'LucideIcons'; font-style: normal; font-weight: normal; font-variant: normal;
+        text-rendering: auto; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+        display: inline-block;
+      }
+       .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 48;
+        line-height: 1; /* Ensure icon aligns well */
+       }
+
+      /* --- Color Palettes --- */
+      :root {
+          /* Light Theme (Default - Purple Inspired) */
+          --bg-main: #F4F0FF;
+          --bg-card: #ffffff;
+          --bg-panel: #ffffff;
+          --bg-hover: #f8fafc;
+          --text-primary: #1e293b;
+          --text-secondary: #64748b;
+          --accent-color: #7402FF;
+          --accent-text-color: #ffffff;
+          --border-color: #e2e8f0;
+          --shadow-color: rgba(97, 1, 214, 0.07);
+          --overlay-bg: rgba(0, 0, 0, 0.1);
+          --panel-bg: var(--bg-panel);
+          --panel-text-primary: var(--text-primary);
+          --panel-text-secondary: var(--text-secondary);
+          --exp-item-strong-color: var(--accent-color);
+          --close-button-bg: rgba(0,0,0,0.05);
+          --close-button-hover-bg: rgba(0,0,0,0.1);
+          --brightness-filter: brightness(0.98);
+          --wave-color-1: #DACDFF;
+          --wave-color-2: #C0A6FF;
+          --wave-color-3: #A373FF;
+          --wave-color-4: #8A3BFF;
+          --wave-color-5: #7402FF;
+          --wave-opacity: 0.4;
+      }
+
+      .dark-mode {
+          /* Dark Theme (Electric Violet) */
+          --bg-main: #1a1a1a;
+          --bg-card: #460076;
+          --bg-panel: #2c2c2c;
+          --bg-hover: #71079C;
+          --text-primary: #f0f0f0;
+          --text-secondary: #a0a0a0;
+          --accent-color: #B80FFF;
+          --accent-text-color: #ffffff;
+          --border-color: #555555;
+          --shadow-color: rgba(0, 0, 0, 0.3);
+          --overlay-bg: rgba(26, 26, 26, 0.7);
+          --panel-bg: var(--bg-panel);
+          --panel-text-primary: #ffffff;
+          --panel-text-secondary: #cccccc;
+          --exp-item-strong-color: var(--accent-color);
+          --close-button-bg: rgba(255,255,255,0.08);
+          --close-button-hover-bg: rgba(255,255,255,0.15);
+          --brightness-filter: brightness(1);
+           /* Dark theme wave colors (Violet to Fuchsia) */
+          --wave-color-1: #fc00fc;
+          --wave-color-2: #CE00DA;
+          --wave-color-3: #A100B9;
+          --wave-color-4: #730097;
+          --wave-color-5: #460076;
+          --wave-opacity: 0.5;
+      }
+
+      html, body {
+          height: 100%;
+          overflow: hidden; /* Prevent body scroll */
+       }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-main);
+        color: var(--text-primary);
+        position: relative; z-index: 0; display: flex;
+        justify-content: center; align-items: center;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        background-image: none; background-size: auto; background-position: default;
+        background-repeat: default; background-attachment: default;
+      }
+
+       body::before { content: none; }
+
+      /* Centering Wrapper */
+      .portfolio-wrapper {
+        max-width: 1024px; width: 100%; height: 80%; max-height: 80vh; margin: 0 auto;
+        border: 1px solid var(--border-color); border-radius: 1rem;
+        overflow: hidden; position: relative;
+        background-color: var(--bg-main);
+        box-shadow: 0 8px 25px var(--shadow-color);
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+      }
+
+      .secondary-text { color: var(--text-secondary); }
+      .accent-bg { background-color: var(--accent-color); }
+      .accent-text { color: var(--accent-text-color); }
+
+      /* Utility class for accent underline */
+      .underline-accent {
+          text-decoration: underline;
+          text-decoration-color: var(--accent-color);
+          text-decoration-thickness: 2px;
+          text-underline-offset: 4px;
+          transition: text-decoration-color 0.3s ease;
+      }
+
+
+      /* Main Layout Container */
+      .portfolio-container { height: 100%; width: 100%; overflow: hidden; position: relative; }
+
+      /* Wrapper for Bento Grid */
+      #bento-grid-wrapper {
+          height: 100%; display: flex; align-items: stretch;
+          justify-content: center; padding: 1rem; box-sizing: border-box;
+          position: relative; z-index: 1;
+          /* Removed overflow-y: auto; */
+          overflow-x: hidden;
+      }
+
+      /* Bento Grid Styling */
+      #bento-grid {
+        display: grid; grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1rem; align-content: stretch; height: 100%; width: 100%;
+        /* overflow: visible; */ /* Revert to allow scroll */
+        overflow-y: auto; /* Allow grid scroll if needed */
+        background-color: transparent; transition: filter 0.3s ease-in-out;
+      }
+      body.panel-visible #bento-grid { filter: var(--brightness-filter); }
+
+      /* Side Panel Dialog Styling */
+      #content-display {
+        position: fixed; top: 0; right: 0; width: 45%; max-width: 550px; height: 100vh;
+        background-color: var(--panel-bg); box-shadow: -3px 0 15px var(--shadow-color);
+        padding: 1.5rem 2rem; overflow-y: auto; z-index: 100;
+        transform: translateX(100%); transition: transform 0.4s ease-in-out, background-image 0.3s ease, border-color 0.3s ease, background-color 0.3s ease; visibility: hidden;
+        border-left: 1px solid var(--border-color);
+        color: var(--panel-text-primary);
+        background-image: none;
+      }
+      /* Dark Mode Side Panel */
+      .dark-mode #content-display {
+          background-image: none;
+          background-color: var(--panel-bg);
+          color: var(--panel-text-primary);
+      }
+       .dark-mode #content-display .secondary-text,
+       .dark-mode #content-display p,
+       .dark-mode #content-display li,
+       .dark-mode #content-display span:not(.material-symbols-outlined):not(.lucide):not(.position):not(.company):not(.job-dates)
+       { color: var(--panel-text-secondary); }
+       .dark-mode #content-display a span { color: var(--panel-text-primary); }
+       .dark-mode #content-display a.contact-link { border-color: transparent; background-color: transparent; }
+       .dark-mode #content-display a.contact-link:hover { background-color: var(--bg-hover); }
+       .dark-mode #content-display a .lucide { color: var(--panel-text-secondary); }
+
+      body.panel-visible #content-display { transform: translateX(0%); visibility: visible; }
+
+      /* Panel Overlay */
+       #panel-overlay {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background-color: var(--overlay-bg); z-index: 50; opacity: 0; visibility: hidden;
+        transition: opacity 0.4s ease-in-out, visibility 0s linear 0.4s, background-color 0.3s ease;
+       }
+        body.panel-visible #panel-overlay { opacity: 1; visibility: visible; transition: opacity 0.4s ease-in-out, visibility 0s linear 0s, background-color 0.3s ease; }
+
+      /* Bento Box Styling */
+      .bento-box {
+        background-color: var(--bg-card); border-radius: 0.75rem; padding: 1rem;
+        display: flex; flex-direction: column; justify-content: flex-start;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+        box-shadow: 0 2px 4px var(--shadow-color);
+        overflow: hidden; border: 2px solid transparent; box-sizing: border-box;
+        color: var(--text-primary);
+      }
+      /* Explicit Grid Placement Styles */
+       .bento-about { grid-column: 1 / 5; grid-row: 1; }
+       .bento-skills { grid-column: 1 / 2; grid-row: 2; }
+       .bento-image { grid-column: 2 / 3; grid-row: 2; }
+       .bento-experience { grid-column: 3 / 5; grid-row: 2 / 3; }
+       .bento-linkedin { grid-column: 1 / 2; grid-row: 3; }
+       .bento-contact { grid-column: 2 / 3; grid-row: 3; }
+       .bento-github { grid-column: 3 / 4; grid-row: 3; }
+       .bento-theme-toggle { grid-column: 4 / 5; grid-row: 3; }
+
+      .bento-box[data-content-id],
+      .bento-box.link-box a,
+      .bento-box.theme-toggle-box { cursor: pointer; }
+
+      .bento-box:not(.link-box):not(.image-box):hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px var(--shadow-color);
+      }
+       .bento-box[data-content-id]:not(.image-cover-box):hover,
+       .bento-box.theme-toggle-box:hover,
+       .bento-box.link-box a:hover { background-color: var(--bg-hover); }
+
+      .bento-box.link-box { cursor: default; padding: 0; background-color: transparent; border: none; box-shadow: none; }
+      .bento-box.link-box a {
+          display: block; height: 100%; width: 100%; text-decoration: none;
+          color: inherit; border-radius: 0.75rem; overflow: hidden;
+          transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+          background-color: var(--bg-card);
+          box-shadow: 0 2px 4px var(--shadow-color);
+       }
+       .bento-box.link-box a:hover {
+           transform: translateY(-3px);
+           box-shadow: 0 4px 8px var(--shadow-color);
+      }
+      .bento-box.link-box a:hover img { transform: scale(1.05); }
+
+      .bento-box.active-box { border: 2px solid var(--accent-color); transform: translateY(0); }
+
+      /* Box Header */
+      .bento-box .box-header { display: flex; align-items: center; width: 100%; margin-bottom: 0.6rem; }
+      .bento-box .icon { font-size: 1.3rem; line-height: 1; flex-shrink: 0; color: var(--text-secondary); }
+      .bento-box h3 { font-size: 0.9rem; font-weight: 600; text-align: left; flex-grow: 1; margin-left: 0.5rem; }
+
+      /* Header Only Boxes */
+      .bento-box.header-only { justify-content: center; align-items: center; padding: 1rem; }
+      .bento-box.header-only .box-header { flex-direction: column; justify-content: center; align-items: center; text-align: center; margin-bottom: 0; }
+      .bento-box.header-only .icon { font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--text-primary); }
+      .bento-box.header-only h3 { font-size: 1rem; margin-left: 0; color: var(--text-secondary); }
+
+      /* About Box */
+      .bento-box.about-intro-box { padding: 1.25rem 1.5rem; align-items: center; text-align: center; justify-content: center; }
+      .bento-box.about-intro-box h2 { font-size: 2rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.75rem; }
+      .bento-box.about-intro-box .box-content { margin-top: 0; font-size: 0.9rem; max-width: 80%; color: var(--text-secondary); }
+
+      .bento-box .box-content { text-align: left; font-size: 0.75rem; line-height: 1.4; color: var(--text-secondary); overflow: hidden; }
+
+      /* Image Box */
+      .bento-box.image-box { padding: 0; justify-content: center; align-items: center; cursor: default; background-color: transparent; border: none; box-shadow: none; }
+      .bento-box.image-box img {
+          width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          box-shadow: 0 2px 4px var(--shadow-color);
+      }
+       .bento-box.image-box:hover img {
+           transform: translateY(-3px);
+           box-shadow: 0 4px 8px var(--shadow-color);
+       }
+
+      /* Experience Box */
+      .bento-box.experience-box { justify-content: flex-start; }
+       .bento-box.experience-box .box-header h3 { font-size: 1.1rem; }
+       .bento-box.experience-box .box-header .icon { font-size: 1.5rem; color: var(--text-primary); }
+      .bento-box.experience-box .box-content { flex-grow: 1; display: block; }
+      .experience-preview .job-item { display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0; border-bottom: 1px solid var(--border-color); }
+      .experience-preview .job-item:last-child { border-bottom: none; }
+      .experience-preview .job-details .position { font-weight: 600; font-size: 0.8rem; color: var(--text-primary); display: block; }
+      .experience-preview .job-details .company { font-size: 0.75rem; color: var(--text-secondary); }
+      .experience-preview .job-dates { font-size: 0.7rem; color: var(--text-secondary); text-align: right; white-space: nowrap; margin-left: 0.75rem; }
+
+      /* Content Panel */
+      .content-panel { display: none; animation: fadeInContent 0.6s ease forwards; }
+      .content-panel.visible-panel { display: block; }
+      @keyframes fadeInContent { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+       #content-display h2, #content-display h4 { color: var(--panel-text-primary); }
+       #content-display p, #content-display li, #content-display span:not(.material-symbols-outlined):not(.lucide) { color: var(--panel-text-secondary); }
+       #content-display a span { color: var(--panel-text-primary); }
+       #content-display .exp-item strong { color: var(--exp-item-strong-color); }
+       /* Contact link hover */
+       #contact-content a.contact-link { transition: color 0.3s ease; display: flex; align-items: center; padding: 0.5rem 0; }
+       #contact-content a.contact-link:hover,
+       #contact-content a.contact-link:hover span,
+       #contact-content a.contact-link:hover .lucide {
+           color: var(--accent-color) !important;
+           background-color: transparent !important;
+       }
+        #contact-content a.contact-link .lucide { color: var(--panel-text-secondary); margin-right: 0.75rem; font-size: 1.25rem; transition: color 0.3s ease; }
+
+
+      /* Close Button */
+       #close-content { position: absolute; top: 1rem; right: 1rem; background: var(--close-button-bg); color: var(--text-secondary); border: 1px solid var(--border-color); border-radius: 50%; width: 2.25rem; height: 2.25rem; font-size: 1.25rem; line-height: 1; cursor: pointer; display: flex; justify-content: center; align-items: center; transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; z-index: 110; }
+       #close-content:hover { background: var(--close-button-hover-bg); color: var(--text-primary); }
+
+       /* --- Panel Item Styling (No Card) --- */
+       /* Add dividers and padding to panel list items */
+       #experience-content .exp-item-container:not(:last-child),
+       #skills-content .skill-item-container:not(:last-child),
+       #contact-content .space-y-4 > a:not(:last-child) {
+           border-bottom: 1px solid var(--border-color);
+           padding-bottom: 1rem;
+           margin-bottom: 1rem;
+       }
         #experience-content .exp-item-container,
         #skills-content .skill-item-container,
-        #contact-content .space-y-4>a {
+        #contact-content .space-y-4 > a {
             padding-top: 0.5rem;
         }
 
-        /* Style panel item strong/secondary text */
-        #experience-content .exp-item-container strong {
-            color: var(--exp-item-strong-color);
+       /* Style panel item strong/secondary text */
+       #experience-content .exp-item-container strong { color: var(--exp-item-strong-color); }
+       #experience-content .exp-item-container .secondary-text { color: var(--panel-text-secondary); }
+       #experience-content .exp-item-container p:first-of-type { color: var(--panel-text-primary); }
+       #skills-content .skill-item-container h4 { color: var(--panel-text-primary); }
+       #skills-content .skill-item-container p { color: var(--panel-text-secondary); }
+       /* Contact link styles */
+        #contact-content a.contact-link { color: var(--panel-text-primary); text-decoration: none; background: none; border: none; box-shadow: none; }
+        #contact-content a.contact-link .lucide { color: var(--panel-text-secondary); }
+
+
+       /* Theme Toggle Button (Box) */
+       #theme-toggle-box { /* Uses .header-only styles */ }
+       #theme-toggle-box .icon { font-size: 2.5rem; margin-bottom: 0; color: var(--text-primary); }
+
+      /* --- Animated Waves Background --- */
+      #wave-background {
+        position: fixed; bottom: 0; left: -5%; width: 110%; height: 50%;
+        z-index: -1; pointer-events: none; overflow: hidden;
+        display: block; opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+      body:not(.dark-mode) #wave-background { opacity: 1; }
+      body.dark-mode #wave-background { opacity: 1; }
+
+      #wave-svg { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; }
+
+      @keyframes waveMove {
+          0% { transform: translateX(0%); }
+          50% { transform: translateX(-4%); }
+          100% { transform: translateX(0%); }
+      }
+       .wave-1 { fill: var(--wave-color-1); animation: waveMove 28s linear infinite alternate; opacity: var(--wave-opacity, 0.4); }
+       .wave-2 { fill: var(--wave-color-2); animation: waveMove 32s linear infinite alternate; animation-delay: -4s; opacity: var(--wave-opacity, 0.4); }
+       .wave-3 { fill: var(--wave-color-3); animation: waveMove 36s linear infinite alternate; animation-delay: -8s; opacity: var(--wave-opacity, 0.4); }
+       .wave-4 { fill: var(--wave-color-4); animation: waveMove 40s linear infinite alternate; animation-delay: -12s; opacity: var(--wave-opacity, 0.4); }
+       .wave-5 { fill: var(--wave-color-5); animation: waveMove 44s linear infinite alternate; animation-delay: -16s; opacity: var(--wave-opacity, 0.4); }
+
+
+      /* Responsive Adjustments */
+      @media (max-width: 1024px) {
+           #content-display { width: 60%; max-width: 600px; }
+           #bento-grid { grid-template-rows: repeat(3, minmax(140px, auto)); }
+           #wave-background { height: 40%; }
+      }
+
+      @media (max-width: 768px) {
+        .portfolio-wrapper { max-width: none; border: none; border-radius: 0; height: 100%; max-height: none; } /* Allow full height */
+        #bento-grid-wrapper { padding: 1rem; height: 100%; align-items: stretch; overflow-y: auto;} /* Allow wrapper scroll */
+        #bento-grid { height: auto; max-height: none; overflow-y: visible; } /* Grid height auto */
+
+        #bento-grid {
+          padding: 0; /* Remove padding for scroll */
+          gap: 1rem;
+          grid-template-columns: 1fr; /* Single Column */
+          grid-auto-rows: minmax(150px, auto);
+          filter: none !important;
+           .bento-about, .bento-image, .bento-linkedin,
+           .bento-experience, .bento-skills, .bento-contact,
+           .bento-github, .bento-theme-toggle {
+               grid-column: auto !important; grid-row: auto !important;
+           }
+        }
+        #content-display { width: 90%; max-width: none; padding: 1.5rem; border-left: none; position: fixed; height: 100vh; }
+        .bento-box { padding: 1rem; border-radius: 0.75rem; }
+        .bento-box.image-cover-box, .bento-box.link-box { padding: 0; }
+        .bento-box .icon { font-size: 1.4rem; }
+        .bento-box h3 { font-size: 0.9rem; margin-left: 0.5rem;}
+        .bento-box .box-content { font-size: 0.7rem; }
+        .bento-box.about-intro-box h2 { font-size: 1.5rem; }
+        .bento-box.about-intro-box .box-content { font-size: 0.8rem; max-width: 95%;}
+        .bento-box.header-only .icon { font-size: 2.5rem; }
+        .bento-box.header-only h3 { font-size: 1rem; }
+        #close-content { top: 1rem; right: 1rem; width: 2rem; height: 2rem; font-size: 1.2rem;}
+        .experience-preview .job-details .position { font-size: 0.75rem; }
+        .experience-preview .job-details .company { font-size: 0.65rem; }
+        .experience-preview .job-dates { font-size: 0.6rem; }
+         #wave-background { height: 30%; }
+      }
+       @media (max-width: 480px) {
+             #content-display { width: 95%; }
+             .bento-box.header-only .icon { font-size: 2rem; }
+             .bento-box.header-only h3 { font-size: 0.9rem; }
+             #wave-background { height: 20%; }
         }
 
-        #experience-content .exp-item-container .secondary-text {
-            color: var(--panel-text-secondary);
-        }
-
-        #experience-content .exp-item-container p:first-of-type {
-            color: var(--panel-text-primary);
-        }
-
-        #skills-content .skill-item-container h4 {
-            color: var(--panel-text-primary);
-        }
-
-        #skills-content .skill-item-container p {
-            color: var(--panel-text-secondary);
-        }
-
-        /* Contact link styles */
-        #contact-content a.contact-link {
-            color: var(--panel-text-primary);
-            text-decoration: none;
-            background: none;
-            border: none;
-            box-shadow: none;
-        }
-
-        #contact-content a.contact-link .lucide {
-            color: var(--panel-text-secondary);
-        }
-
-
-        /* Theme Toggle Button (Box) */
-        #theme-toggle-box {
-            /* Uses .header-only styles */
-        }
-
-        #theme-toggle-box .icon {
-            font-size: 2.5rem;
-            margin-bottom: 0;
-            color: var(--text-primary);
-        }
-
-        /* --- Animated Waves Background --- */
-        #wave-background {
-            position: fixed;
-            bottom: 0;
-            left: -5%;
-            width: 110%;
-            height: 50%;
-            z-index: -1;
-            pointer-events: none;
-            overflow: hidden;
-            display: block;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        body:not(.dark-mode) #wave-background {
-            opacity: 1;
-        }
-
-        body.dark-mode #wave-background {
-            opacity: 1;
-        }
-
-        #wave-svg {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        @keyframes waveMove {
-            0% {
-                transform: translateX(0%);
-            }
-
-            50% {
-                transform: translateX(-4%);
-            }
-
-            100% {
-                transform: translateX(0%);
-            }
-        }
-
-        .wave-1 {
-            fill: var(--wave-color-1);
-            animation: waveMove 28s linear infinite alternate;
-            opacity: var(--wave-opacity, 0.4);
-        }
-
-        .wave-2 {
-            fill: var(--wave-color-2);
-            animation: waveMove 32s linear infinite alternate;
-            animation-delay: -4s;
-            opacity: var(--wave-opacity, 0.4);
-        }
-
-        .wave-3 {
-            fill: var(--wave-color-3);
-            animation: waveMove 36s linear infinite alternate;
-            animation-delay: -8s;
-            opacity: var(--wave-opacity, 0.4);
-        }
-
-        .wave-4 {
-            fill: var(--wave-color-4);
-            animation: waveMove 40s linear infinite alternate;
-            animation-delay: -12s;
-            opacity: var(--wave-opacity, 0.4);
-        }
-
-        .wave-5 {
-            fill: var(--wave-color-5);
-            animation: waveMove 44s linear infinite alternate;
-            animation-delay: -16s;
-            opacity: var(--wave-opacity, 0.4);
-        }
-
-
-        /* Responsive Adjustments */
-        @media (max-width: 1024px) {
-            #content-display {
-                width: 60%;
-                max-width: 600px;
-            }
-
-            #bento-grid {
-                grid-template-rows: repeat(3, minmax(140px, auto));
-            }
-
-            #wave-background {
-                height: 40%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .portfolio-wrapper {
-                max-width: none;
-                border: none;
-                border-radius: 0;
-                height: auto;
-                max-height: none;
-            }
-
-            #bento-grid-wrapper {
-                padding: 1rem;
-                height: auto;
-                align-items: stretch;
-            }
-
-            #bento-grid {
-                height: auto;
-                max-height: none;
-                overflow-y: visible;
-            }
-
-            #bento-grid {
-                padding: 1rem;
-                gap: 1rem;
-                grid-template-columns: 1fr;
-                /* Single Column */
-                grid-auto-rows: minmax(150px, auto);
-                filter: none !important;
-
-                .bento-about,
-                .bento-image,
-                .bento-linkedin,
-                .bento-experience,
-                .bento-skills,
-                .bento-contact,
-                .bento-github,
-                .bento-theme-toggle {
-                    grid-column: auto !important;
-                    grid-row: auto !important;
-                }
-            }
-
-            #content-display {
-                width: 90%;
-                max-width: none;
-                padding: 1.5rem;
-                border-left: none;
-                position: fixed;
-                height: 100vh;
-            }
-
-            .bento-box {
-                padding: 1rem;
-                border-radius: 0.75rem;
-            }
-
-            .bento-box.image-cover-box,
-            .bento-box.link-box {
-                padding: 0;
-            }
-
-            .bento-box .icon {
-                font-size: 1.4rem;
-            }
-
-            .bento-box h3 {
-                font-size: 0.9rem;
-                margin-left: 0.5rem;
-            }
-
-            .bento-box .box-content {
-                font-size: 0.7rem;
-            }
-
-            .bento-box.about-intro-box h2 {
-                font-size: 1.5rem;
-            }
-
-            .bento-box.about-intro-box .box-content {
-                font-size: 0.8rem;
-                max-width: 95%;
-            }
-
-            .bento-box.header-only .icon {
-                font-size: 2.5rem;
-            }
-
-            .bento-box.header-only h3 {
-                font-size: 1rem;
-            }
-
-            #close-content {
-                top: 1rem;
-                right: 1rem;
-                width: 2rem;
-                height: 2rem;
-                font-size: 1.2rem;
-            }
-
-            .experience-preview .job-details .position {
-                font-size: 0.75rem;
-            }
-
-            .experience-preview .job-details .company {
-                font-size: 0.65rem;
-            }
-
-            .experience-preview .job-dates {
-                font-size: 0.6rem;
-            }
-
-            #wave-background {
-                height: 30%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            #content-display {
-                width: 95%;
-            }
-
-            .bento-box.header-only .icon {
-                font-size: 2rem;
-            }
-
-            .bento-box.header-only h3 {
-                font-size: 0.9rem;
-            }
-
-            #wave-background {
-                height: 20%;
-            }
-        }
     </style>
 </head>
-
 <body class="">
 
     <div class="portfolio-wrapper">
@@ -1035,7 +506,7 @@
 
         <div id="content-display">
             <button id="close-content" aria-label="Close content">
-                <span class="material-symbols-outlined">close</span> </button>
+                 <span class="material-symbols-outlined">close</span> </button>
             <div id="content-panels">
                 <div id="about-content" class="content-panel">
                     <h2 class="text-3xl font-bold mb-6 ">About Me</h2>
@@ -1103,37 +574,12 @@
                 <div id="skills-content" class="content-panel">
                     <h2 class="text-3xl font-bold mb-6 ">Skills & Expertise</h2>
                     <div class="space-y-4">
-                        <div class="skill-item-container">
-                            <h4 class="text-xl font-semibold mb-2 "><span
-                                    class="lucide text-lg align-middle mr-2">&#xe931;</span>Front-End</h4>
-                            <p class="secondary-text text-sm">ReactJS, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS,
-                                Responsive Design, UI/UX Principles.</p>
+                        <div class="skill-item-container"> <h4 class="text-xl font-semibold mb-2 "><span class="lucide text-lg align-middle mr-2">&#xe931;</span>Front-End</h4> <p class="secondary-text text-sm">ReactJS, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, Responsive Design, UI/UX Principles.</p> </div>
+                        <div class="skill-item-container"> <h4 class="text-xl font-semibold mb-2 "><span class="lucide text-lg align-middle mr-2">&#xea41;</span>Back-End</h4> <p class="secondary-text text-sm">Python, Node.js, Ruby on Rails, RESTful APIs, Microservices Architecture.</p> </div>
+                        <div class="skill-item-container"> <h4 class="text-xl font-semibold mb-2 "><span class="lucide text-lg align-middle mr-2">&#xe93b;</span>Databases</h4> <p class="secondary-text text-sm">SQL (PostgreSQL), NoSQL (MongoDB), Database Design & Management.</p> </div>
+                        <div class="skill-item-container"> <h4 class="text-xl font-semibold mb-2 "><span class="lucide text-lg align-middle mr-2">&#xe92a;</span>DevOps & Tools</h4> <p class="secondary-text text-sm">Git, Kubernetes, Docker, CI/CD (e.g., GitHub Actions, Jenkins), Testing (Unit, Integration), Agile Methodologies.</p> </div>
+                        <div class="skill-item-container"> <h4 class="text-xl font-semibold mb-2 "><span class="lucide text-lg align-middle mr-2">&#xe9b2;</span>Soft Skills</h4> <p class="secondary-text text-sm">Problem Solving, Team Leadership, Mentoring, Communication, Process Improvement.</p> </div>
                         </div>
-                        <div class="skill-item-container">
-                            <h4 class="text-xl font-semibold mb-2 "><span
-                                    class="lucide text-lg align-middle mr-2">&#xea41;</span>Back-End</h4>
-                            <p class="secondary-text text-sm">Python, Node.js, Ruby on Rails, RESTful APIs,
-                                Microservices Architecture.</p>
-                        </div>
-                        <div class="skill-item-container">
-                            <h4 class="text-xl font-semibold mb-2 "><span
-                                    class="lucide text-lg align-middle mr-2">&#xe93b;</span>Databases</h4>
-                            <p class="secondary-text text-sm">SQL (PostgreSQL), NoSQL (MongoDB), Database Design &
-                                Management.</p>
-                        </div>
-                        <div class="skill-item-container">
-                            <h4 class="text-xl font-semibold mb-2 "><span
-                                    class="lucide text-lg align-middle mr-2">&#xe92a;</span>DevOps & Tools</h4>
-                            <p class="secondary-text text-sm">Git, Kubernetes, Docker, CI/CD (e.g., GitHub Actions,
-                                Jenkins), Testing (Unit, Integration), Agile Methodologies.</p>
-                        </div>
-                        <div class="skill-item-container">
-                            <h4 class="text-xl font-semibold mb-2 "><span
-                                    class="lucide text-lg align-middle mr-2">&#xe9b2;</span>Soft Skills</h4>
-                            <p class="secondary-text text-sm">Problem Solving, Team Leadership, Mentoring,
-                                Communication, Process Improvement.</p>
-                        </div>
-                    </div>
                 </div>
                 <div id="contact-content" class="content-panel">
                     <h2 class="text-3xl font-bold mb-6 ">Get In Touch</h2>
@@ -1141,15 +587,9 @@
                         on innovative software products. If you have a project that needs a passionate and skilled
                         engineer, or just want to connect, feel free to reach out! </p>
                     <div class="space-y-4 mb-8">
-                        <a href="mailto:nathanmrtns@gmail.com"
-                            class="contact-link flex items-center p-2 -ml-2 rounded transition duration-200"> <span
-                                class="lucide text-xl mr-3 text-gray-500 dark:text-gray-400">&#xe97f;</span>
-                            <span>nathanmrtns@gmail.com</span> </a>
+                        <a href="mailto:nathanmrtns@gmail.com" class="contact-link flex items-center p-2 -ml-2 rounded transition duration-200"> <span class="lucide text-xl mr-3 text-gray-500 dark:text-gray-400">&#xe97f;</span> <span>nathanmrtns@gmail.com</span> </a>
                         <a href="https://docs.google.com/document/d/19FvgeUNyN3fq2bSiEiYyZGW51t4oftCqRX9RgcllH_0/edit?usp=sharing"
-                            target="_blank" rel="noopener noreferrer"
-                            class="contact-link flex items-center p-2 -ml-2 rounded transition duration-200"> <span
-                                class="lucide text-xl mr-3 text-gray-500 dark:text-gray-400">&#xea1e;</span> <span>View
-                                Resume</span> </a>
+                            target="_blank" rel="noopener noreferrer" class="contact-link flex items-center p-2 -ml-2 rounded transition duration-200"> <span class="lucide text-xl mr-3 text-gray-500 dark:text-gray-400">&#xea1e;</span> <span>View Resume</span> </a>
                     </div>
                 </div>
             </div>
